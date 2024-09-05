@@ -1,0 +1,13 @@
+{
+  "FastqToBam.fastq_1": "gs://trellis-v2-chop/sample_pe_1.fq.gz",
+  "FastqToBam.fastq_2": "gs://trellis-v2-chop/sample_pe_2.fq.gz",
+  "FastqToBam.output_bam": "sample_pe.sorted.bam",
+  "FastqToBam.reference_fasta": {
+    "ref_fasta": "gs://trellis-v2-chop/Homo_sapiens_assembly19.fasta",
+    "ref_sa": "gs://trellis-v2-chop/Homo_sapiens_assembly19.fasta.sa",
+    "ref_amb": "gs://trellis-v2-chop/Homo_sapiens_assembly19.fasta.amb",
+    "ref_bwt": "gs://trellis-v2-chop/Homo_sapiens_assembly19.fasta.bwt",
+    "ref_ann": "gs://trellis-v2-chop/Homo_sapiens_assembly19.fasta.ann",
+    "ref_pac": "gs://trellis-v2-chop/Homo_sapiens_assembly19.fasta.pac"
+  }
+}
