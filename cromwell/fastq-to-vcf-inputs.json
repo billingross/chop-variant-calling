@@ -1,0 +1,21 @@
+{
+  "FastqToVcf.fastq_1": "gs://trellis-v2-chop/sample_pe_1.fq.gz",
+  "FastqToVcf.fastq_2": "gs://trellis-v2-chop/sample_pe_2.fq.gz",
+  "FastqToVcf.roi_bed": "gs://trellis-v2-chop/truncated_roi.bed",
+  "FastqToVcf.sample_name": "sample_pe",
+  "FastqToVcf.reference_fasta": {
+    "ref_fasta": "gs://trellis-v2-chop/Homo_sapiens_assembly19.fasta",
+    "ref_sa": "gs://trellis-v2-chop/Homo_sapiens_assembly19.fasta.sa",
+    "ref_amb": "gs://trellis-v2-chop/Homo_sapiens_assembly19.fasta.amb",
+    "ref_bwt": "gs://trellis-v2-chop/Homo_sapiens_assembly19.fasta.bwt",
+    "ref_ann": "gs://trellis-v2-chop/Homo_sapiens_assembly19.fasta.ann",
+    "ref_pac": "gs://trellis-v2-chop/Homo_sapiens_assembly19.fasta.pac",
+    "ref_fai": "gs://trellis-v2-chop/Homo_sapiens_assembly19.fasta.fai",
+    "ref_dict": "gs://trellis-v2-chop/Homo_sapiens_assembly19.dict"
+  },
+  "FastqToVcf.annotation_file": "gs://trellis-v2-chop/GCF_000001405.25_GRCh37.p13_feature_table_genes_coding_chr_trunc.txt.gz",
+  "FastqToVcf.annotation_file_index": "gs://trellis-v2-chop/GCF_000001405.25_GRCh37.p13_feature_table_genes_coding_chr_trunc.txt.gz.tbi",
+  "FastqToVcf.annotation_header": "gs://trellis-v2-chop/gene-annotation.hdr",
+  "FastqToVcf.annotation_columns": "CHROM,FROM,TO,INFO/gene",
+  "FastqToVcf.filter_string": "INFO/DP < 3 || FORMAT/GQ < 7"
+}
