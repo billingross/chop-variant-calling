@@ -1,5 +1,9 @@
 # chop-variant-calling
 
+* Output VCF: `filtered_annotated_sample_pe.vcf`
+* Workflow definition: `cromwell/fastq-to-vcf.wdl`
+* Workflow inputs: `cromwell/fastq-to-vcf-inputs.json`
+
 ## Workflow steps and commands
 
 ### 1. BWA-MEM
