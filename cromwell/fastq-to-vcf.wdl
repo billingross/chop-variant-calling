@@ -31,6 +31,7 @@ workflow FastqToVcf {
     call SamtoolsFlagstat {
         input:
             input_bam = BwaMem.aligned_bam
+            input_bai = BwaMem.aligned_bai
     }
 
     # Call variants for the region in the bed
@@ -102,6 +103,7 @@ task BwaMem {
 task SamtoolsFlagstat {
     input {
         File input_bam
+        File input_bai
     }
 
     command <<<
