@@ -30,7 +30,7 @@ workflow FastqToVcf {
     # Generate quality statistics
     call SamtoolsFlagstat {
         input:
-            input_bam = BwaMem.aligned_bam
+            input_bam = BwaMem.aligned_bam,
             input_bai = BwaMem.aligned_bai
     }
 
@@ -156,14 +156,19 @@ task BcftoolsAnnotate {
         File annotation_file_index
         File annotation_header
         String annotation_columns
+        String sample_name
     }
 
+    String annotated_vcf_name = "annotated_~{sample_name}.vcf"
+
     command <<<
+        ls -lh annotated_/mnt/disks/cromwell_root/trellis-v2-cromwell/FastqToVcf/*/call-GatkHaplotypeCaller
+
         bcftools annotate \
         -a ~{annotation_file} \
         -h ~{annotation_header} \
         -c ~{annotation_columns} \
-        ~{input_vcf} > annotated_~{input_vcf}
+        ~{input_vcf} > ~{annotated_vcf_name}
         
         ls
     >>>
@@ -173,7 +178,7 @@ task BcftoolsAnnotate {
         disks: "local-disk 100 HDD"
     }
     output {
-        File annotated_vcf = "annotated_~{input_vcf}"
+        File annotated_vcf = "~{annotated_vcf_name}
     }
 }
 
@@ -181,10 +186,13 @@ task BcftoolsFilter {
     input {
         File input_vcf
         String filter_string
+        String sample_name
     }
 
+    String filtered_vcf_name = "filtered_~{sample_name}.vcf"
+
     command <<<
-        bcftools view -e '~{filter_string}' -o filtered_~{input_vcf} ~{input_vcf}
+        bcftools view -e '~{filter_string}' -o ~{filtered_vcf_name} ~{input_vcf}
         ls
     >>>
     runtime {
@@ -193,7 +201,7 @@ task BcftoolsFilter {
         disks: "local-disk 100 HDD"
     }
     output {
-        File filtered_vcf = "filtered_~{input_vcf}"
+        File filtered_vcf = "~{filtered_vcf_name}"
     }
 }
 
