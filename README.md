@@ -54,7 +54,7 @@ bcftools annotate \
 
 ### 5. Bcftools view
 
-Apply some filtrations.
+Apply some filtrations. Filter based on read depth and genotype quality.
 
 Command:
 ```
