@@ -162,15 +162,11 @@ task BcftoolsAnnotate {
     String annotated_vcf_name = "annotated_~{sample_name}.vcf"
 
     command <<<
-        ls -lh annotated_/mnt/disks/cromwell_root/trellis-v2-cromwell/FastqToVcf/*/call-GatkHaplotypeCaller
-
         bcftools annotate \
         -a ~{annotation_file} \
         -h ~{annotation_header} \
         -c ~{annotation_columns} \
         ~{input_vcf} > ~{annotated_vcf_name}
-        
-        ls
     >>>
     runtime {
         docker: "biocontainers/bcftools:v1.9-1-deb_cv1"
@@ -178,7 +174,7 @@ task BcftoolsAnnotate {
         disks: "local-disk 100 HDD"
     }
     output {
-        File annotated_vcf = "~{annotated_vcf_name}
+        File annotated_vcf = "~{annotated_vcf_name}"
     }
 }
 
@@ -193,7 +189,6 @@ task BcftoolsFilter {
 
     command <<<
         bcftools view -e '~{filter_string}' -o ~{filtered_vcf_name} ~{input_vcf}
-        ls
     >>>
     runtime {
         docker: "biocontainers/bcftools:v1.9-1-deb_cv1"
