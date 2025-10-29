@@ -1,6 +1,6 @@
 # chop-variant-calling
 
-This workflow is designed to perform variant calling on paired-end fastqs using the Cromwell workflow engine running on Google Cloud Platform.
+This workflow is designed to perform variant calling on paired-end fastqs using the Cromwell workflow engine running on Google Cloud Platform. This is my solution to the technical challenge posed to me during my interiew with the Children's Hospital of Philadelphia known by the acronym CHOP.
 
 * Output VCF: `filtered_annotated_sample_pe.vcf`
 * Workflow definition: `cromwell/fastq-to-vcf.wdl`
